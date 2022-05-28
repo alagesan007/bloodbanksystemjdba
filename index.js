@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
     res.send("server start")
 })
 
-app.use(Router);
+app.use("/",Router);
 
 //connection
 const uri = process.env.MONGODB_CONNECTION_STRING;
