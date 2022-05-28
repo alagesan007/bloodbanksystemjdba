@@ -12,6 +12,10 @@ app.use("/",Router);
 const PORT = process.env.port || 5000;
 const uri = process.env.MONGODB_CONNECTION_STRING;
 
+app.get("/",(req,res)=>{
+    res.json("server start")
+})
+
 //connection
 
 mongoose.connect(uri,{
