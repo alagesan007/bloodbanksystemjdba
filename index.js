@@ -14,14 +14,10 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/",(req,res)=>{
-    res.json("server start")
+    res.send("server start")
 })
 
 app.use(Router);
-
-
-
-
 
 //connection
 const uri = process.env.MONGODB_CONNECTION_STRING;
