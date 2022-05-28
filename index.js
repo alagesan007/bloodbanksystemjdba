@@ -13,7 +13,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/info",Router);
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGODB_CONNECTION_STRING;
 
 
