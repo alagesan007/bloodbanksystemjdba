@@ -1,10 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
 const Router = require('./router.js')
 const cors = require('cors');
 
+
 const app = express();
+
+
+const PORT = process.env.PORT || 5000;
+
 app.use(express.json());
 app.use(cors());
 
@@ -12,13 +17,14 @@ app.get("/",(req,res)=>{
     res.json("server start")
 })
 
-app.use("/info",Router);
-const PORT = process.env.PORT || 5000;
-const uri = process.env.MONGODB_CONNECTION_STRING;
+app.use(Router);
+
+
 
 
 
 //connection
+const uri = process.env.MONGODB_CONNECTION_STRING;
 
 mongoose.connect(uri,{
     useNewUrlParser:true,
