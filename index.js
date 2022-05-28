@@ -8,13 +8,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/",Router);
-const PORT = process.env.port || 5000;
-const uri = process.env.MONGODB_CONNECTION_STRING;
-
 app.get("/",(req,res)=>{
     res.json("server start")
 })
+
+app.use("/info",Router);
+const PORT = process.env.port || 5000;
+const uri = process.env.MONGODB_CONNECTION_STRING;
+
+
 
 //connection
 
