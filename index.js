@@ -20,9 +20,9 @@ app.get("/",(req,res)=>{
 app.use("/",Router);
 
 //connection
-const uri = process.env.MONGODB_CONNECTION_STRING;
 
-mongoose.connect(uri,{
+
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING,{
     useNewUrlParser:true,
     useNewUrlParser:true,
     useUnifiedTopology:true,
