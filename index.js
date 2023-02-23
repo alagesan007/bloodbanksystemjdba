@@ -3,7 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Router = require('./router.js')
 const cors = require('cors');
-
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Origin: <origin>
+Access-Control-Allow-Origin: null
 
 const app = express();
 
