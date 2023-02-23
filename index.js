@@ -3,9 +3,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Router = require('./router.js')
 const cors = require('cors');
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Origin: <origin>
-Access-Control-Allow-Origin: null
+app.use(function (req, res, next) {
+res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+res.setHeader('Access-Control-Allow-Credentials', true);
+next();
+});
 
 const app = express();
 
